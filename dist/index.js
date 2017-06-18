@@ -14,7 +14,7 @@ var ManifestWebpackPlugin = function () {
 
     this.onDone = function (inStata) {
       console.log('========= instate start ==============');
-      conosole.log(inStata);
+      console.log(inStata);
       console.log('========= instate end  ==============');
     };
   }
