@@ -14,7 +14,7 @@ export default class ManifestWebpackPlugin{
   onDone = (compilation, callback) =>{    
     //console.log(inStata);
     for (var filename in compilation.assets) {
-      filelist += ('- '+ filename +'\n');
+      console.log(file);
     }
   };
 }
