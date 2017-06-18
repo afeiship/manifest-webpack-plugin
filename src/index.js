@@ -1,12 +1,21 @@
 export default class ManifestWebpackPlugin{
+  static defaults = {
+    dist:'dist'
+  };
+  
+  constructor(inOptions){
+    this.options = Object.assign(inOptions,ManifestWebpackPlugin.defaults);
+  }
+  
   apply(compiler){
-    compiler.plugin('done',this.onDone);
+    compiler.plugin('emit',this.onDone);
   }
 
-  onDone = (inStata) =>{
-    console.log('========= instate start ==============');
-    console.log(inStata);
-    console.log('========= instate end  ==============');
+  onDone = (compilation, callback) =>{    
+    //console.log(inStata);
+    for (var filename in compilation.assets) {
+      filelist += ('- '+ filename +'\n');
+    }
   };
 }
 
